@@ -4,12 +4,9 @@ use<BOSL/shapes.scad>
 
 include<../StairwayLighting_Vars_Common.scad>
 include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Light_Vars.scad>
-include<../Holders/StairwayLighting_Holders_Vars.scad>
+include<StairwayLighting_Vars_Light.scad>
 
-lsh=led_strip_holder;
-wh=wires_hole;
-th=base_thickness;
+th=lt[0];
 wth=lsh[3];
 
 echo("Led strip width space:", 
@@ -90,46 +87,39 @@ module wires_hole()
 
 module screw_hole()
 {
-	sh=screw_m25_hole;
-	sch=screw_m25_cone_head;
 	sd=screw_m25[0];
-	h=sh[0]+sch[1]+sh[1];
+	h=srhh25[0]+srh25[1]+srhh25[1];
 	
 	down(epsilon)
-	fwd(sh[3])
+	fwd(srhh25[3])
 	union()
 	{
 		minkowski()
 		{
 			union()
 			{
-				cylinder(d=sd,h=sh[0],$fn=m_fn);
+				cylinder(d=sd,h=srhh25[0],$fn=m_fn);
 				
-				up(sh[0])
-				cylinder(d1=sd,d2=sch[0],
-					h=sch[1],$fn=m_fn);
+				up(srhh25[0])
+				cylinder(d1=sd,d2=srh25[0],
+					h=srh25[1],$fn=m_fn);
 				
-				up(sh[0]+sch[1])
-				cylinder(d=sch[0],h=sh[1],$fn=m_fn);
+				up(srhh25[0]+srh25[1])
+				cylinder(d=srh25[0],h=srhh25[1],$fn=m_fn);
 			}
 			
-			cube([epsilon,sh[3],epsilon]);
+			cube([epsilon,srhh25[3],epsilon]);
 		}
 		
-		cylinder(d=sh[2],h=h,$fn=m_fn);
+		cylinder(d=srhh25[2],h=h,$fn=m_fn);
 	}
 }
 
 module screws_holes()
 {
-	y1=top_holder[1]+middle_holder[1];
-	y2=hole_diameter/2-y1;
-	y3=screw_m25_hole[4];
-	y=y3+y2;
-	
 	xflip_copy()
-	right(screws_distance/2)
-	ymove(y)
+	right(srhk[0]/2)
+	ymove(srhk[1])
 	screw_hole();
 }
 
@@ -150,7 +140,7 @@ module light()
 
 module test()
 {
-	l=square_length;
+	l=lt[1];
 	s1=[l,l];
 	s2=[l-2*th,l-2*th];
 	
@@ -158,4 +148,4 @@ module test()
   prismoid(size1=s1,size2=s2,h=th);
 }
 
-test();
+//test();

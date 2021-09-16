@@ -4,31 +4,27 @@ use <BOSL/shapes.scad>
 
 include<../StairwayLighting_Vars_Common.scad>
 include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Holders_Vars.scad>
+include<StairwayLighting_Vars_Holders.scad>
 
 use<StairwayLighting_Holders_Top.scad>
 use<StairwayLighting_Holders_Middle.scad>
 use<StairwayLighting_Holders_Bottom.scad>
 
-hd=hole_diameter;
+d=hr[0];
 
-th=top_holder;
-mh=middle_holder;
-bh=bottom_holder;
-
-back(hd/2-th[1])
+back(srhk[1])
 color("LightGray")
 top_holder();
 
-back(hd/2-th[1]-mh[1])
+fwd(d/2-bh[1])
 color("DarkGray")
 middle_holder();
 
 color("LightGray")
-fwd(hd/2-bh[1]-bh[3])
+fwd(d/2-bh[1])
 yflip()
 bottom_holder();
 
 down(2)
 color("Green")
-cylinder(d=hd,h=2,$fn=xl_fn);
+cylinder(d=d,h=2,$fn=xl_fn);

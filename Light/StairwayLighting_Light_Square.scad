@@ -4,13 +4,14 @@ use<BOSL/shapes.scad>
 
 include<../StairwayLighting_Vars_Common.scad>
 include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Light_Vars.scad>
+
+include<StairwayLighting_Vars_Light.scad>
 use<StairwayLighting_Light_Common.scad>
 
 module square_base()
 {
-	l=square_length;
-	th=base_thickness;
+	th=lt[0];
+	l=lt[1];
 	
 	s1=[l,l];
 	s2=[l-2*th,l-2*th];

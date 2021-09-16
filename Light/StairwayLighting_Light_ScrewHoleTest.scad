@@ -4,7 +4,7 @@ use<BOSL/shapes.scad>
 
 include<../StairwayLighting_Vars_Common.scad>
 include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Light_Vars.scad>
+include<StairwayLighting_Vars_Light.scad>
 
 use<StairwayLighting_Light_Common.scad>
 

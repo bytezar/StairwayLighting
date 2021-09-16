@@ -1,10 +1,10 @@
-base_thickness=2.0;
-
-square_length=76;
-heart_light=[
-  60,//0-length
-  -15,//1-offset y
+light=[
+  2.0,//0-base thickness
+  76, //1-square length
+  58, //2-heart length
+  -15,//3-heart light y-offset
 ];
+lt=light;
 
 led_strip_holder=[
   62,   //0-length
@@ -15,9 +15,10 @@ led_strip_holder=[
   -22.5,//5-angle
   -14,  //6-offset y
 ];
+lsh=led_strip_holder;
 
-// used ethernet wires cores
-// gold pin connector
+// I used ethernet wires cores
+// and gold pin connector
 wires_hole=[
   1.6,//0-thickness
   2.6,//1-width
@@ -28,5 +29,6 @@ wires_hole=[
   4.0,//6-soldering spot length
   2.0,//7-hole offset x
 ];
+wh=wires_hole;
 
 

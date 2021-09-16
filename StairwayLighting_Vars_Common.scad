@@ -6,3 +6,9 @@ s_fn=max(4,16/develop_mode);
 m_fn=max(4,32/develop_mode);
 l_fn=max(4,64/develop_mode);
 xl_fn=max(4,128/develop_mode);
+
+screw_hook=[
+  30,//screw hooks distance
+  6,//screw hook hole y-offset
+];
+srhk=screw_hook;

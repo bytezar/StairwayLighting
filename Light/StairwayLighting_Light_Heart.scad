@@ -4,33 +4,31 @@ use<BOSL/shapes.scad>
 
 include<../StairwayLighting_Vars_Common.scad>
 include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Light_Vars.scad>
+
+include<StairwayLighting_Vars_Light.scad>
 use<StairwayLighting_Light_Common.scad>
 
-th=base_thickness;
-ht=heart_light;
-
-module heart()
+module heart_base()
 {
-	lh=ht[0];
-	lh2=lh/2;
-	lht=lh-2*th;
+	th=lt[0];
+	l=lt[2];
+	ll=l-th;
 	
-	s1=[lh,lh];
-	s2=[lht,lht];
+	s1=[l,l];
+	s2=[ll,ll];
 	
-	ymove(ht[1])
+	ymove(lt[3])
 	zrot(45)
 	{
 		prismoid(size1=s1,size2=s2,h=th);
 		
-		back(lh2)
-		zcyl(d1=lh,d2=lht,h=th,center=0,$fn=xl_fn);
+		back(l/2)
+		zcyl(d1=l,d2=ll,h=th,center=0,$fn=xl_fn);
 		
-		right(lh2)
-		zcyl(d1=lh,d2=lht,h=th,center=0,$fn=xl_fn);
+		right(l/2)
+		zcyl(d1=l,d2=ll,h=th,center=0,$fn=xl_fn);
 	}
 }
 
 light()
-heart();
+heart_base();
