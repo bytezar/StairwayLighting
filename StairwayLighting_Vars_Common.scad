@@ -8,7 +8,7 @@ l_fn=max(4,64/develop_mode);
 xl_fn=max(4,128/develop_mode);
 
 screw_hook=[
-  30,//screw hooks distance
-  6,//screw hook hole y-offset
+  26,//screw hooks distance
+  7,//screw hook hole y-offset
 ];
 srhk=screw_hook;
