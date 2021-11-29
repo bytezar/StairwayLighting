@@ -12,11 +12,11 @@ screw_m25_cone_head=[
 srh25=screw_m25_cone_head;
 
 nut_m25=[
-  5.8,//0-hole diameter
+  6.0,//0-hole diameter
   2.4,//1-hole thickness
   5.0,//2-width flat side (wrench size)
   10, //3-nut holder diameter
-  1.6,//4-cone thickness
+  1.0,//4-cone thickness
 ];
 nt25=nut_m25;
 
@@ -31,7 +31,8 @@ srhh25=screw_m25_hook_hole;
 //---------- M4 ----------
 screw_m4=[
   4.6,//0-hole diameter
-  9,//1-holder diameter
+  9,  //1-holder diameter
+  10, //2-washer diameter
 ];
 sr4=screw_m4;
 
