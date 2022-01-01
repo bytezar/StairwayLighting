@@ -2,12 +2,12 @@ include<BOSL/constants.scad>
 use<BOSL/transforms.scad>
 use<BOSL/shapes.scad>
 
-include<../StairwayLighting_Vars_Common.scad>
-include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Vars_Holders.scad>
+include<../StairLight_Vars_Common.scad>
+include<../StairLight_Vars_Screws.scad>
+include<StairLight_Vars_Holders.scad>
 
-use<StairwayLighting_Holders_ScrewHeadBase.scad>
-use<StairwayLighting_Holders_ScrewHeadTop.scad>
+use<StairLight_Holders_ScrewHeadBase.scad>
+use<StairLight_Holders_ScrewHeadTop.scad>
 
 d=hr[0];
 h=hr[1];

@@ -30,5 +30,3 @@ wires_hole=[
   2.0,//7-hole offset x
 ];
 wh=wires_hole;
-
-

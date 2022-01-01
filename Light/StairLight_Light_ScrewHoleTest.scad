@@ -2,11 +2,11 @@ include<BOSL/constants.scad>
 use<BOSL/transforms.scad>
 use<BOSL/shapes.scad>
 
-include<../StairwayLighting_Vars_Common.scad>
-include<../StairwayLighting_Vars_Screws.scad>
-include<StairwayLighting_Vars_Light.scad>
+include<../StairLight_Vars_Common.scad>
+include<../StairLight_Vars_Screws.scad>
+include<StairLight_Vars_Light.scad>
 
-use<StairwayLighting_Light_Common.scad>
+use<StairLight_Light_Common.scad>
 
 difference()
 {
